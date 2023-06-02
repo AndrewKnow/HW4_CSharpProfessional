@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.Abstractions
 {
-    public interface IGuessNumber
+    /// <summary>
+    /// Создание рандомных чисел
+    /// </summary>
+    public interface INumGenerator
     {
+        int Generat();
     }
 }
