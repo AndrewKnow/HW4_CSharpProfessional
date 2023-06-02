@@ -1,4 +1,5 @@
 ﻿using HW4_CSharpProfessional.Game;
+using HW4_CSharpProfessional.Settings;
 
 namespace HW4_CSharpProfessional
 {
@@ -9,14 +10,29 @@ namespace HW4_CSharpProfessional
             Console.WriteLine("Hello, World!");
 
             //Принцип открытости/закрытости (Open/Closed Principle)
-            //Выбор минимального и максимального числа абстрагирован в интерфейсе INumGenerator и определен в реализациях 
-            //этого интерфейса GenerateMaxNum и GenerateMinNum.
-            //Класс NumRequester делегирует назначение рандомного числа методу Generat INumGenerator.
-            RangeRequest rangeRequest = new RangeRequest();
-            List<int> listInt = rangeRequest.GetRange();
+            // Суть этого принципа состоит в том, что система должна быть построена таким образом,
+            // что все ее последующие изменения должны быть реализованы с помощью добавления нового кода, а не изменения уже существующего
+            //Выбор минимального и максимального значения диапозона абстрагирован в интерфейсе INumGenerator и определен в реализациях интерфеса
+            //GenerateMaxNum и GenerateMinNum.
+            //Класс NumRange делегирует назначение рандомного дипозона методу Generat объета INumGenerator.
 
-            Console.WriteLine(listInt[0]);
-            Console.WriteLine(listInt[listInt.Count - 1]);
+
+            //Принцип подстановки Лисков(Liskov Substitution Principle)
+
+
+
+       
+
+
+
+            //RangeRequest rangeRequest = new RangeRequest();
+            //List<int> listInt = rangeRequest.GetRange();
+
+            //Console.WriteLine(listInt[0]);
+            //Console.WriteLine(listInt[listInt.Count - 1]);
+
+
+
         }
     }
 }

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HW4_CSharpProfessional.Game;
+using HW4_CSharpProfessional.GameAbstractions;
 
-namespace HW4_CSharpProfessional.Game
+namespace HW4_CSharpProfessional.Settings
 {
-    public class RangeRequest
-    {       
+    public class RangeRequest: IRangeRequest
+    {
         public List<int> GetRange()
         {
             NumRange rangeRequest = new NumRange(0);
