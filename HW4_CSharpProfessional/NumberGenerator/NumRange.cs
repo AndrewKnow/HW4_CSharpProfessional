@@ -9,15 +9,17 @@ namespace HW4_CSharpProfessional.Game
 {
     public class NumRange
     {
+        private int _min { get; set; }
+        private int _max { get; set; }
         private int _num { get; set; }
-
-        public NumRange(int num)
+        public NumRange(int min, int max)
         {
-            _num = num;
+            _min = min;
+            _max = max;
         }
         public int NumGenerate(INumGenerator numGenerator)
         {
-            _num = numGenerator.Generat();
+            _num = numGenerator.Generat(_min, _max);
             return _num;
         }
     }

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.Game
 {
-    public class GenerateMinNum : INumGenerator
+    public class GenerateMinMaxNum : INumGenerator
     {
-        public int Generat()
+        public int Generat(int min, int max)
         {
             Random random = new Random();
-            int num = random.Next(1, 10);
+            int num = random.Next(min, max);
             return num;
         }
     }

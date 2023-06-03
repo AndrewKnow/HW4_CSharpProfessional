@@ -1,6 +1,6 @@
 ﻿using HW4_CSharpProfessional.Game;
 using HW4_CSharpProfessional.Settings;
-
+using HW4_CSharpProfessional.Abstractions;
 namespace HW4_CSharpProfessional
 {
     internal class Program
@@ -8,6 +8,11 @@ namespace HW4_CSharpProfessional
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+
+            //Принцип единственной обязанности (Single Responsibility Principle) можно сформулировать так:
+            //Каждый компонент должен иметь одну и только одну причину для изменения.
+            //GenerateMinNum, GenerateMaxNum от
+
 
             //Принцип открытости/закрытости (Open/Closed Principle)
             // Суть этого принципа состоит в том, что система должна быть построена таким образом,
@@ -21,18 +26,19 @@ namespace HW4_CSharpProfessional
 
 
 
-       
+            //Принцип разделения интерфейсов(Interface Segregation Principle) относится к тем случаям, 
+            //    когда классы имеют "жирный интерфейс", то есть слишком раздутый интерфейс, не все методы
+            //    и свойства которого используются и могут быть востребованы.Таким образом, интерфейс получатся 
+            //    слишком избыточен или "жирным".
 
 
+            //Принцип инверсии зависимостей(Dependency Inversion Principle)
+            //    служит для создания слабосвязанных сущностей, которые легко тестировать, модифицировать и обновлять
 
-            //RangeRequest rangeRequest = new RangeRequest();
-            //List<int> listInt = rangeRequest.GetRange();
-
-            //Console.WriteLine(listInt[0]);
-            //Console.WriteLine(listInt[listInt.Count - 1]);
 
 
 
         }
+
     }
 }

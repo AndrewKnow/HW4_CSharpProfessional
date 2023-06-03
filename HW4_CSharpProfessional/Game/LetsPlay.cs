@@ -3,27 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HW4_CSharpProfessional.Abstractions;
+using HW4_CSharpProfessional.GameAbstractions;
 using HW4_CSharpProfessional.Settings;
 
 namespace HW4_CSharpProfessional.Game
 {
-    public class LetsPlay: UserSettingsNormal
+    public class BeginPlay
     {
-        private RangeRequest _setNumsRange;
-        private SetNumberOfAttempts _numberOfAttempts;
-        public LetsPlay(RangeRequest setNumsRange, SetNumberOfAttempts numberOfAttempts) : base(setNumsRange)
+        private readonly INumGenerator _numGenerator;
+        private readonly IGetNum _getNum;
+
+        public BeginPlay(INumGenerator numGenerator, IGetNum getNum)
         {
-            _setNumsRange = setNumsRange;
-            _numberOfAttempts = numberOfAttempts;
+            _numGenerator = numGenerator;
+            _getNum = getNum;
         }
 
-        public (List<int>, int ) Play()
-        {
-            List<int> listInt = _setNumsRange.GetRange();
-            int attempts = _numberOfAttempts.NumberOfAttempts;
 
-            return (listInt, attempts);
+        public void InstallGameSettings()
+        {
+            Console.Write("Угадайте число из загаданного программой дипозона указанных вами чисел\n");
+            this.ReadUserNum(out int min, out int max);
         }
+
+        public void ReadUserNum(out int min, out int max)
+        {
+            Console.Write("Введите минимальное чсило из диапозона:");
+            min = _getNum.GetNum();
+            Console.Write("Введите максимальное чсило из диапозона:");
+            max = _getNum.GetNum();
+
+            _numGenerator.Generat(min, max);
+
+        }
+
 
     }
 }

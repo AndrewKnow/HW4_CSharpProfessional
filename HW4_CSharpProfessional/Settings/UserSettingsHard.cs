@@ -9,14 +9,6 @@ namespace HW4_CSharpProfessional.Settings
     public class UserSettingsHard
     {
         private SetNumberOfAttempts _numberOfAttempts;
-        private RangeRequest _numsRange;
-
-        public UserSettingsHard(RangeRequest setNumsRange)
-        {
-            _numberOfAttempts = new SetNumberOfAttempts();
-            _numsRange = setNumsRange;
-        }
-
         public void ChangeSettings()
         {
             _numberOfAttempts.NumberOfAttempts = 1;

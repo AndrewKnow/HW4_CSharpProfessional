@@ -13,7 +13,5 @@ namespace HW4_CSharpProfessional.Settings
         /// </summary>
         public int NumberOfAttempts { get; set; }
     }
-
-
 }
 

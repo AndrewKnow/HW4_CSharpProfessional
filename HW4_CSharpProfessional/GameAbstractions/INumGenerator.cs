@@ -11,6 +11,6 @@ namespace HW4_CSharpProfessional.Abstractions
     /// </summary>
     public interface INumGenerator
     {
-        int Generat();
+        int Generat(int min, int max);
     }
 }

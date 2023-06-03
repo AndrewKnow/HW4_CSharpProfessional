@@ -14,7 +14,7 @@ namespace HW4_CSharpProfessional.Settings
         {
             NumRange rangeRequest = new NumRange(0);
             int min = rangeRequest.NumGenerate(new GenerateMinNum());
-            int max = rangeRequest.NumGenerate(new GenerateMaxNum());
+            int max = rangeRequest.NumGenerate(new GenerateMinMaxNum());
 
             List<int> nums = new List<int>();
 
