@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.GameAbstractions
 {
-    public interface IRangeRequest
+    public interface IGameAttempts
     {
-        List<int> GetRange();
+        int ChangeSettings();
     }
 }

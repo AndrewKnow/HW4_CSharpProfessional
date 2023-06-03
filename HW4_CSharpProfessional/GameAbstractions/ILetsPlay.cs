@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.GameAbstractions
 {
-    public interface ILetsPlay : IGetNum, IPostNum
+    public interface ILetsPlay : IGetNum
     {
     }
 }

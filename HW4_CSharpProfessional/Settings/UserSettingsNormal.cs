@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HW4_CSharpProfessional.GameAbstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.Settings
 {
-    public class UserSettingsNormal
+    public class UserSettingsNormal: IGameAttempts
     {
-        private SetNumberOfAttempts _numberOfAttempts;
-        public void ChangeSettings()
+        /// <summary>
+        /// Количество попыток
+        /// </summary>
+        /// <returns> число </returns>
+        public int ChangeSettings()
         {
-            _numberOfAttempts.NumberOfAttempts = 3;
+            return 3;
         }
     }
 }
