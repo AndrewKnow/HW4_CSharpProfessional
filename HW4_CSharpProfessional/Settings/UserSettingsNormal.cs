@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HW4_CSharpProfessional.Settings
+namespace HW4_CSharpProfessional.NumberGenerator
 {
-    public class UserSettingsNormal: IGameAttempts
+    public class UserSettingsNormal : IGameAttempts
     {
         /// <summary>
         /// Количество попыток

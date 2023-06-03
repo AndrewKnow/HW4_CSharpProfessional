@@ -1,17 +1,21 @@
 ﻿using HW4_CSharpProfessional.Game;
-using HW4_CSharpProfessional.Settings;
 using HW4_CSharpProfessional.Abstractions;
+using HW4_CSharpProfessional.NumberGenerate;
+using HW4_CSharpProfessional.GameAbstractions;
+using System;
+using HW4_CSharpProfessional.NumberGenerator;
+
 namespace HW4_CSharpProfessional
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine(@"Игра ""Угадай число"""); ;
 
             //Принцип единственной обязанности (Single Responsibility Principle) можно сформулировать так:
             //Каждый компонент должен иметь одну и только одну причину для изменения.
-            //GenerateMinNum, GenerateMaxNum от
+            //Метод ChangeSettings може
 
 
             //Принцип открытости/закрытости (Open/Closed Principle)
@@ -19,7 +23,7 @@ namespace HW4_CSharpProfessional
             // что все ее последующие изменения должны быть реализованы с помощью добавления нового кода, а не изменения уже существующего
             //Выбор минимального и максимального значения диапозона абстрагирован в интерфейсе INumGenerator и определен в реализациях интерфеса
             //GenerateMaxNum и GenerateMinNum.
-            //Класс NumRange делегирует назначение рандомного дипозона методу Generat объета INumGenerator.
+            //Класс NumberGenerator делегирует назначение рандомного дипозона методу Generat объета INumGenerator.
 
 
             //Принцип подстановки Лисков(Liskov Substitution Principle)
@@ -33,11 +37,19 @@ namespace HW4_CSharpProfessional
 
 
             //Принцип инверсии зависимостей(Dependency Inversion Principle)
-            //    служит для создания слабосвязанных сущностей, которые легко тестировать, модифицировать и обновлять
+            //    служит для создания слабосвязаных сущностей, которые легко тестировать, модифицировать и обновлять
 
+            var numberGenerator = new GenerateMinMaxNum();
+            var getNum = new GetUserNum();
+            var userSettingsNormal = new UserSettingsNormal();
 
+            BeginPlay beginPlay = new BeginPlay(numberGenerator, getNum, userSettingsNormal);
 
-
+            while(true)
+            {
+                beginPlay.InstallGameSettings();
+            }
+            
         }
 
     }
