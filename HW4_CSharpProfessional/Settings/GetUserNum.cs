@@ -7,19 +7,36 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.NumberGenerate
 {
-    public class GetUserNum: IGetNum
+    /// <summary>
+    /// Валидация полученного от пользователя числа
+    /// </summary>
+    public class GetUserNum: IGeUsertNum, IParse<string>, ITryParse<string>
     {
         public int GetNum()
         {
             var read = Console.ReadLine();
-            bool tryParseToInt = int.TryParse(read, out int _);
+
+            bool tryParseToInt = TryParseObj(read);
+
 
             if (tryParseToInt)
             {
-                return Convert.ToInt32(read);
+                return ParseObj(read);
             }
 
             return 0;
+        }
+
+        public int ParseObj(string obj)
+        {
+            int parseToInt = int.Parse(obj);
+            return parseToInt;
+        }
+
+        public bool TryParseObj(string obj)
+        {
+            bool tryParseToInt = int.TryParse(obj, out int _);
+            return tryParseToInt;
         }
     }
 }

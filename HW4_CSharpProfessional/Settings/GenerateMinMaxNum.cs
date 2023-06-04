@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.NumberGenerate
 {
+    /// <summary>
+    /// Программа в методе Generat загадывает число в выбранном пользователем диапазоне
+    /// </summary>
     public class GenerateMinMaxNum : INumGenerator
     {
         public int Generat(int min, int max)

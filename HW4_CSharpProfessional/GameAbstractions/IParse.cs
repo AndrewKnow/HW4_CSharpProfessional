@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HW4_CSharpProfessional.GameAbstractions
 {
-    public interface IGetNum
+    public interface IParse<T>
     {
-        int GetNum();
+        int ParseObj(T obj);
     }
 }

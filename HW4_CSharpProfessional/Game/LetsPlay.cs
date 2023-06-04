@@ -8,13 +8,13 @@ using HW4_CSharpProfessional.GameAbstractions;
 
 namespace HW4_CSharpProfessional.Game
 {
-    public class BeginPlay
+    public class LetsPlay
     {
         private readonly INumGenerator _numGenerator;
-        private readonly IGetNum _getNum;
+        private readonly IGeUsertNum _getNum;
         private readonly IGameAttempts _gameAttempts;
 
-        public BeginPlay(INumGenerator numGenerator, IGetNum getNum, IGameAttempts gameAttempts)
+        public LetsPlay(INumGenerator numGenerator, IGeUsertNum getNum, IGameAttempts gameAttempts)
         {
             _numGenerator = numGenerator;
             _getNum = getNum;
@@ -24,7 +24,6 @@ namespace HW4_CSharpProfessional.Game
 
         public void InstallGameSettings()
         {
-            Console.WriteLine("\nУгадайте число из загаданного программой дипозона указанных вами чисел.\n");
             ReadUserNum(out int secretNum, out int gameAttempts);
             Play(secretNum, gameAttempts);
         }
@@ -71,6 +70,7 @@ namespace HW4_CSharpProfessional.Game
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"Ты угадал загаданное число {secretNum}!");
+                    Console.WriteLine();
                     Console.ForegroundColor = ConsoleColor.White;
                     break;
                 }
@@ -85,6 +85,7 @@ namespace HW4_CSharpProfessional.Game
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine($"Ты не угадал загаданное число {secretNum}!");
+                        Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                     break;
